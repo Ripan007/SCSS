@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.main .main__para {
+  color: red;
+}
+.main .main__para:hover {
+  color: rgb(41, 31, 191);
+}

@@ -7,6 +7,16 @@
 
   ***
 
+  ## _Features of sass_
+
+  - variables
+  - map
+  - nesting
+  - partial
+  - function
+
+  ***
+
 ## _Advantages of using Sass_
 
 - Sass facilitates you to write clean, easy and less CSS in a programming construct.
@@ -27,3 +37,5 @@
 ## _Advantage and Disadvantages of css_
 
 <img src ="https://d8it4huxumps7.cloudfront.net/bites/wp-content/banners/2021/10/616ffee11ce1e_advantages_and_disadvantages_of_css.png?d=700x400">
+
+---

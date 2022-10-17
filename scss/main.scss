@@ -1,0 +1,59 @@
+// partial
+@import './resets';
+@import './variables';
+
+@function weight($weight-name) {
+    @return map-get(font-weights, weight-name);
+}
+
+// css variables
+// :root {
+//     --primary-color: blue;
+//     --text-color: #dc291c;
+// }
+
+//  variable
+
+
+// map
+// $font-weights:("regular":400,
+//     "medium": 600,
+//     "bold":900);
+
+// $font-sizes:("normal": 16px,
+//     "medium": 32px,
+//     "large":100px);
+
+body {
+    // background-color: var(--primary-color);
+    // color: var(--text-color);
+    background-color: $primary-color;
+
+    // color: $text-color;
+    // font-weight: map-get($font-weights, bold);
+    // font-size: map-get($font-sizes, large);
+}
+
+// interpolation 
+
+.main {
+
+    // to select main class as well as para class
+    #{&}__para {
+        color: red;
+        font-weight: weight(bold);
+
+        &:hover {
+            color: rgb(41, 31, 191);
+        }
+    }
+
+    // &__para {
+    //     color: $text-color;
+    // }
+
+    // p {
+    //     color: $text-color;
+    // }
+
+}
