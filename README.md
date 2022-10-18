@@ -14,6 +14,9 @@
   - nesting
   - partial
   - function
+  - mixins
+  - extended
+  - calculation
 
   ***
 

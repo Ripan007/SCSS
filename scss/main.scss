@@ -3,8 +3,9 @@
 @import './variables';
 
 @function weight($weight-name) {
-    @return map-get(font-weights, weight-name);
+    @return map-get($font-weights, $weight-name);
 }
+
 
 // css variables
 // :root {
@@ -36,16 +37,58 @@ body {
 
 // interpolation 
 
+// mixins
+@mixin flexCenter ($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+
+}
+
+@mixin theme ($light-theme:true) {
+    @if $light-theme {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%)
+    }
+}
+
+@mixin mobile {
+    @media (max-width:$mobile) {
+        @content;
+    }
+}
+
 .main {
+    @include flexCenter(row);
+    // width: 50%;
+    width: 80% - 40%;
+    // width: cal(80% - 40%);
+    margin: 0 auto;
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    #{&}__para1 {
+        @extend .main__para;
+
+        &:hover {
+            background: red;
+        }
+    }
 
     // to select main class as well as para class
     #{&}__para {
-        color: red;
-        font-weight: weight(bold);
+        color: $text-color;
+        font-weight: weight(regular);
+
 
         &:hover {
             color: rgb(41, 31, 191);
         }
+
+
     }
 
     // &__para {
@@ -56,4 +99,8 @@ body {
     //     color: $text-color;
     // }
 
+}
+
+.light {
+    @include theme($light-theme:false);
 }
